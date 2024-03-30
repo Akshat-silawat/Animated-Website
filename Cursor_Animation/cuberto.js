@@ -1,22 +1,20 @@
 var circle = document.querySelector("#circle")
 var frames = document.querySelectorAll(".frame")
-const lerp = (x, y, a) => x * (1 - a) + y * a;    //lerp = linear interpolation function 
+const lerp = (x, y, a) => x * (1 - a) + y * a;    
 
 
 frames.forEach(function(frame){
     frame.addEventListener("mousemove",function(dets){
 
-        var dims =  frame.getBoundingClientRect();      // isse apan ko frame ki width or screen se frame ki width ka pta chal jata hai 
-        //    console.log(dims) 
+        var dims =  frame.getBoundingClientRect();      
+
                  var xstart= dims.x
-                //  var ystart= dims.y
+         
     
                  var xend= dims.x+dims.width;
-                //  var yend= dims.y+dims.width;
+              
         
-               var xzeroone=  gsap.utils.mapRange(xstart , xend ,0,1 , dets.clientX )    //iski madad se mouse move jb kr raha hu tb mujhe pta chal raha h ki mujhe text ko kaha move krana hai 
-            //    var yzeroone=  gsap.utils.mapRange(ystart , yend ,0,1 , dets.clienty )    //iski madad se mouse move jb kr raha hu tb mujhe pta chal raha h ki mujhe text ko kaha move krana hai 
-    
+               var xzeroone=  gsap.utils.mapRange(xstart , xend ,0,1 , dets.clientX )   
     
     
         gsap.to(circle,{
@@ -63,7 +61,7 @@ frames.forEach(function(frame){
 
 
 window.addEventListener("mousemove",function(dets){
-    //    circle.style.transform=`translate(${dets.clientX}px,${dets.clientY}px)`;          WITHOUT USING GSAP  dets ki hepl se apan mouse ki position kya hai ye pta krte hai. dets means details or dets.clientX krne se X axis me position pta chalti hia same as y 
+
 
     gsap.to (circle,{
         x:dets.clientX,
