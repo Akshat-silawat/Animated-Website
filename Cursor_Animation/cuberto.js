@@ -29,7 +29,7 @@ frames.forEach(function(frame){
     
         gsap.to(frame.children,{
            x: lerp(-50 , 50 ,xzeroone),
-        //    y: lerp(-50 , 50 ,yzeroone),
+    
            duration:.3
             
         })
@@ -52,7 +52,7 @@ frames.forEach(function(frame){
     
         gsap.to(frame.children,{
             x: 0,
-            // y:0,
+         
             duration:.3
              
          })
@@ -75,7 +75,3 @@ window.addEventListener("mousemove",function(dets){
 
 
 
-// lerp : teen parameter leta h third parametet dena compulsory hai kyuki usse pta chalega ki mouse move kis taraf move krana hai 
-// mapRange : ek range ko dusri range se map kr skkte hai  ye 4 parameter leta hai 
-
-//multicursor : ctrl+shift:L
